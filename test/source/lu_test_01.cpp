@@ -1,5 +1,6 @@
 #include <doctest/doctest.h>
-#include <lu_config.h>
+#include <lu_stdlib.h>
 
-TEST_CASE("lu_test_01") {
+TEST_CASE("lu_test_01")
+{
 }
