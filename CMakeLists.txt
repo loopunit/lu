@@ -59,7 +59,10 @@ target_compile_definitions(lu
 # Link dependencies
 if(WIN32 OR CMAKE_HOST_SYSTEM_NAME MATCHES Windows)
 	target_link_libraries(lu PUBLIC 
-		Userenv.lib)
+		Userenv.lib
+		d3d12.lib
+		d3dcompiler.lib
+		dxgi.lib)
 endif()
 
 target_link_libraries(lu PUBLIC 

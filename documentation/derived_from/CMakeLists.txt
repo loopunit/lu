@@ -323,3 +323,14 @@ ExternalProject_Add(bombela_backward-cpp
   TEST_COMMAND      ""
 )
 
+ExternalProject_Add(ocornut_imgui
+  GIT_REPOSITORY    https://github.com/ocornut/imgui.git
+  GIT_TAG           3e0d6ec895483e33a663d3cfc1c58f1cafbe978c
+  SOURCE_DIR        "${CMAKE_CURRENT_LIST_DIR}/ocornut_imgui"
+  BINARY_DIR        "${CMAKE_CURRENT_LIST_DIR}/ocornut_imgui"
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND     ""
+  INSTALL_COMMAND   ""
+  TEST_COMMAND      ""
+)
+

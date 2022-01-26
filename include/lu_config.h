@@ -65,6 +65,13 @@
 #define LU_OS_IS_UNKNOWN (0)
 #endif
 
+#define LU_OS_IS_VALID (LU_OS_IS_WINDOWS || LU_OS_IS_IOS || LU_OS_IS_MACOS || LU_OS_IS_LINUX)
+#define LU_OS_IS_DX12 (LU_OS_IS_WINDOWS)
+#define LU_OS_IS_VULKAN (LU_OS_IS_LINUX)
+#define LU_OS_IS_METAL (LU_OS_IS_IOS || LU_OS_IS_MACOS)
+#define LU_OS_IS_WIN32 (LU_OS_IS_WINDOWS)
+#define LU_OS_IS_GLFW (!LU_OS_IS_WIN32)
+
 namespace lu
 {
 	namespace config = ::spy;
