@@ -84,13 +84,13 @@ namespace lu
 
 								if (::GetUserProfileDirectoryW(hToken, buffer.data(), &size_needed))
 								{
-									if (auto home = details::convert_wide_str(std::wstring_view(buffer.data(), size_needed - 1)))
+									if (auto home = lu::utf8::from_wide_char(std::wstring_view(buffer.data(), size_needed - 1)))
 									{
 										m_home_dir = std::move(*home);
 									}
 									else
 									{
-										throw std::invalid_argument("error: details::convert_wide_str(str_from)");
+										throw std::invalid_argument("error: lu::utf8::from_wide_char(str_from)");
 									}
 								}
 								else
@@ -151,7 +151,7 @@ namespace lu
 
 		leaf::result<std::string> path_to_string(const path& p) noexcept
 		{
-			return details::convert_wide_str(p.native());
+			return lu::utf8::from_wide_char(p.native());
 		}
 
 		namespace
